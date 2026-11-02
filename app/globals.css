@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+@source "../components/**/*.{js,ts,jsx,tsx}";
+@source "../app/**/*.{js,ts,jsx,tsx}";
+@source "../lib/**/*.{js,ts,jsx,tsx}";
+
+:root {
+  --bg-primary: #080808;
+  --bg-secondary: #111111;
+  --bg-card: #171717;
+  --bg-card-hover: #1f1f1f;
+
+  --gold-primary: #D6A64B;
+  --gold-metallic: #E8C477;
+  --gold-champagne: #F5DFA9;
+  --gold-dark: #99732B;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #A5A5A5;
+  --text-muted: #666666;
+
+  --border-gold: rgba(214, 166, 75, 0.22);
+  --border-gold-hover: rgba(214, 166, 75, 0.55);
+  --glow-gold: 0 0 25px rgba(214, 166, 75, 0.25);
+  --glow-gold-lg: 0 0 45px rgba(214, 166, 75, 0.35);
+
+  --background: #080808;
+  --foreground: #FFFFFF;
+}
+
+@theme {
+  --color-primary-bg: #080808;
+  --color-secondary-bg: #111111;
+  --color-card-bg: #171717;
+  --color-card-hover: #1f1f1f;
+
+  --color-gold-primary: #D6A64B;
+  --color-gold-metallic: #E8C477;
+  --color-gold-champagne: #F5DFA9;
+  --color-gold-dark: #99732B;
+
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A5A5A5;
+  --color-text-muted: #666666;
+
+  --color-border-gold: rgba(214, 166, 75, 0.22);
+  --color-border-gold-hover: rgba(214, 166, 75, 0.55);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a251b;
+  border-radius: 4px;
+  border: 1px solid rgba(214, 166, 75, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D6A64B;
+}
+
+/* Selection */
+::selection {
+  background-color: #D6A64B;
+  color: #080808;
+}
+
+/* Hide scrollbar for clean horizontal tab swipe on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body {
+  background-color: #080808;
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+.font-editorial {
+  font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  letter-spacing: -0.015em;
+  font-weight: 700;
+  text-transform: none;
+}
+
+/* Metallic & Gold Gradient Classes */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F5DFA9 0%, #E8C477 30%, #D6A64B 70%, #B6862D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #F5DFA9 0%, #E8C477 40%, #D6A64B 80%, #99732B 100%);
+}
+
+.gold-gradient-subtle {
+  background: linear-gradient(180deg, rgba(214, 166, 75, 0.12) 0%, rgba(214, 166, 75, 0.02) 100%);
+}
+
+.gold-border {
+  border: 1px solid rgba(214, 166, 75, 0.22);
+}
+
+.gold-border-glow:hover {
+  border-color: rgba(214, 166, 75, 0.6);
+  box-shadow: 0 0 25px rgba(214, 166, 75, 0.2);
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(214, 166, 75, 0.25);
+}
+
+.gold-glow-lg {
+  box-shadow: 0 0 50px rgba(214, 166, 75, 0.35);
+}
+
+.luxury-card {
+  background-color: #171717;
+  border: 1px solid rgba(214, 166, 75, 0.22);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover {
+  border-color: rgba(214, 166, 75, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(214, 166, 75, 0.15);
+  transform: translateY(-2px);
+}
+
+.glass-dark {
+  background: rgba(17, 17, 17, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(214, 166, 75, 0.15);
+}
+
+.glass-nav {
+  background: rgba(8, 8, 8, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(214, 166, 75, 0.15);
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #D6A64B 0%, #FFFFFF 50%, #D6A64B 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s infinite linear;
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 5s infinite ease-in-out;
+}
